@@ -5,7 +5,7 @@ WORKDIR /www
 
 ONBUILD ADD composer.json composer.lock ./
 
-ONBUILD RUN composer install
+ONBUILD RUN composer global require fxp/composer-asset-plugin && composer install
 
 # Source Code
 ONBUILD COPY . .
